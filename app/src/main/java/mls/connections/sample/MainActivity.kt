@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.compose.BackHandler
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -36,6 +37,7 @@ class MainActivity : ComponentActivity() {
             ConnectionsSampleTheme {
                 val connectedDevice by viewModel.connectedDevice.collectAsStateWithLifecycle()
                 if (connectedDevice != null) {
+                    BackHandler { viewModel.disconnect() }
                     MetricsScreen(
                         viewModel = viewModel,
                         deviceName = connectedDevice?.device?.name ?: "Rowing Machine"
