@@ -11,13 +11,13 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            name = "GitHub Packages"
-            url = uri("https://maven.pkg.github.com/MoveLab-Studio/Connections-SDK")
+            name = "MoveLab"
+            url = uri("https://nexus.mls-cdn.net/repository/movelab/")
             credentials {
-                username = providers.gradleProperty("gpr.user").orNull
-                    ?: System.getenv("GPR_USER")
-                password = providers.gradleProperty("gpr.token").orNull
-                    ?: System.getenv("GPR_TOKEN")
+                username = providers.gradleProperty("nexusUser").orNull
+                    ?: System.getenv("NEXUS_USER")
+                password = providers.gradleProperty("nexusPassword").orNull
+                    ?: System.getenv("NEXUS_PASSWORD")
             }
         }
     }
