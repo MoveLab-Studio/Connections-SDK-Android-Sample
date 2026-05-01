@@ -14,15 +14,15 @@ Minimal Android sample app demonstrating the Connections SDK for rowing machine 
 
 - Android Studio Meerkat or newer
 - Android 8.0+ (API 26) device or emulator
-- GitHub Personal Access Token with read access to MoveLab-Studio repos
+- MoveLab Nexus credentials (contact MoveLab to obtain)
 
 ## Getting Started
 
 1. Clone this repo
 2. Add your credentials to `~/.gradle/gradle.properties` (create if it doesn't exist):
    ```
-   gpr.user=connectionslibrary@movelab.studio
-   gpr.token=<your access token>
+   nexusUser=<your username>
+   nexusPassword=<your password>
    ```
 3. Open the project in Android Studio
 4. Press **Sync Project with Gradle Files**
@@ -32,11 +32,9 @@ In debug builds a simulated ("Fake") rowing machine appears automatically in the
 
 ## Authentication
 
-The SDK is hosted in a private GitHub Packages registry under `MoveLab-Studio`. You need a GitHub Personal Access Token with at least **read:packages** access.
+The SDK is hosted on the MoveLab Nexus repository. Contact MoveLab to obtain credentials.
 
-Contact MoveLab to obtain an access token.
-
-The `gradle.properties` file is gitignored to prevent accidentally committing credentials. Alternatively, you can set the `GPR_USER` and `GPR_TOKEN` environment variables instead of using the properties file.
+The `gradle.properties` file is gitignored to prevent accidentally committing credentials. Alternatively, you can set the `NEXUS_USER` and `NEXUS_PASSWORD` environment variables instead of using the properties file.
 
 ## Key Files
 
