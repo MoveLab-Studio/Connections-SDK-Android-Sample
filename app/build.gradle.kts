@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "mls.connections.sample"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "mls.connections.sample"
